@@ -8,35 +8,48 @@
 
 .navbar {
     background-color: #333;
+    /* Adding padding around the children elements of the navbar */
     padding: 10px;
     display: flex;
+    /* Justifying content using space-between allows us to separate the two children elements of the navbar to be separated along the horizontal axis */
     justify-content: space-between;
     align-items: center;
 }
 
+/* Removing standard styling from anchor elements within the navbar */
+
 .navbar a {
+    /* Removes the underscore from anchor elements */
     text-decoration: none;
+    /* Changing the standard blue of an anchor element into white */
     color: white;
 }
+
+/* Menu styling - turning it into a flex container in order to manipulate layout easily */
 
 .menu {
     display: flex;
     align-items: center;
 }
 
+/* Styling the list element of the menu */
+
 .menu ul {
+    /* Removing the dots that normally show in unordered lists */
     list-style: none;
     display: flex;
-    justify-content: flex-end;
 }
 
+/* Adding a small margin to li elements to make the menu look cleaner */
+
 .menu ul li {
-    text-decoration: none;
     margin-right: 15px;
 }
 
+/* Adding a hover pseudo class for the anchor elements so that they change color when the cursor is hovering over them */
+
 .navbar a:hover {
-    color: antiquewhite;
+    color: chartreuse;
 }
 
 .logo {
@@ -48,15 +61,18 @@
     padding: 20px;
 }
 
+/* Styling the hamburger menu */
+
 .menu-toggle {
     color: white;
     font-size: 25px;
+    /* We will see a pointing finger when hovering over the hamburger menu */
     cursor: pointer;
-    /* Hidden by default, only visible when media query satisfied */
+    /* Hidden by default, only visible when media query fires */
     display: none; 
 }
 
-/* Media queries for mobile screens  */
+/* Media queries for smaller screens  */
 
 @media (max-width: 599px) {
     
@@ -65,15 +81,18 @@
         display: block;
     }
 
-    /* Hiding the menu */
+    /* Hiding the big screen menu */
     .menu {
         display: none;
+        /* It's already a flex element based on previous attributes. Now changing the flex direction to column to arrange the menu items in a vertical direction */
         flex-direction: column;
+        /* Position property removes the element from the regular flow and positions it relative to its closest ancestor. In this case it's the navbar */
         position: absolute;
-        top: 55px;
-        background-color: #333;
+        /* Combined with position: absolute, I then use top, left, and right to position the menu below the navbar element */
+        top: 45px;
         left: 0;
         right: 0;
+        background-color: #333;
         padding: 20px 0px;
     }
 
@@ -82,7 +101,9 @@
     }
 
     .menu ul {
+        /* Using flex-direction: column to ensure that the ul elements are stakced on top each other */
         flex-direction: column;
+        /* Alinging the menu ul elements in the center */
         align-items: center;
     }
 

@@ -10,13 +10,12 @@
 <body>
     <!-- Navbar -->
      <div class="navbar">
-        <div class="logo">
-            <a href="#">My Website</a>
-        </div>
-
+        <a href="#" class="logo">My Website</a>
+        
+        <!-- Hamburger menu icon from Font Awesome -->
         <i class="fa-solid fa-bars menu-toggle" onclick="toggleMenu()"></i>
 
-
+        <!-- Navigation menu -->
         <div id="menu" class="menu">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -33,6 +32,7 @@
         <p>This is a sample website to demonstrate a responsive navigation menu.</p>
       </div>
 
+      <!-- JavaScript function adding "active" class to the menu ID -->
       <script>
         function toggleMenu() {
             const menu = document.getElementById("menu");
